@@ -1,7 +1,7 @@
 <?php require_once 'includes/cabecera.php'; ?>
 <div class="container overflow-hidden">
-<div class="mt-3">
-    <h1>Productos:</h1>
+<div class="mt-3"> 
+        <h1>Productos:</h1>
     <hr class="mt-2" size="10" />
 </div>
 

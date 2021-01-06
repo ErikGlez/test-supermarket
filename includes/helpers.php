@@ -33,6 +33,12 @@ function clearError(){
     $clear = session_unset();
   }
 
+  if(isset($_SESSION['error-login'])){
+    $_SESSION['error-login']= null;
+
+    $clear = session_unset();
+  }
+
   if(isset($_SESSION['exito'])){
     $_SESSION['exito']= null;
 

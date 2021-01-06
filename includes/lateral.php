@@ -1,5 +1,42 @@
 
 <div>
+<?php if(isset($_SESSION['vendedor'])): ?>
+        <div >
+            <h4>Bienvenido/a:</h4>
+            <h5 style="text-transform: uppercase;"> <strong><?= $_SESSION['vendedor']['nombre'].' '. $_SESSION['vendedor']['apellidos']; ?></strong></h5>
+            <!-- botones -->
+            <a href="logout.php" class="btn btn-danger">Cerrar Sesión</a>
+        </div>
+
+        
+ <?php endif; ?>
+
+
+
+ <?php if(!isset($_SESSION['vendedor'])): ?>
+       
+<div id="login" class="mt-3">
+            <h5>Identificate</h5>
+            <p style="font-size: 12px;">¿Eres vendedor?, inicia sesión para acceder al panel de vendedor</p>
+             <?php if(isset($_SESSION['error-login']) && !isset($_SESSION['vendedor'])): ?>
+                <div class="bg bg-danger">
+                    <?= $_SESSION['error-login']; ?>
+                </div>
+            <?php endif; ?>
+            <form action="login.php" method="POST">
+               
+                <div class="mb-3">
+                    <label for="correo" class="form-label">Correo</label>
+                    <input type="email" class="form-control" name="correo" id="correo">
+                </div>
+                <div class="mb-3">
+                    <label for="contrasena" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" name="contrasena" id="contrasena">
+                </div>
+                <input type="submit" class="btn btn-primary" value="Entrar" />
+  </form>
+</div>
+ <?php endif; ?>
     <!-- mostrar errores -->
     <?php if(isset($_SESSION['exito'])) : ?>
                    <div class="bg-success">
@@ -13,6 +50,7 @@
 
                    </div> 
      <?php endif;?>
+     <hr class="mt-2" size="6" />
     <h4>Agregar producto</h4>
     <hr class="mt-2" size="6" />
     <form action="registrarProducto.php" method="POST">
