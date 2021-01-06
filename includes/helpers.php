@@ -24,29 +24,26 @@ function mostrarError($error, $campo){
   return $alert;
 }
 
+
 function clearError(){
   $clear = false;
 
   if(isset($_SESSION['error'])){
-    $_SESSION['error']= null;
-
-    $clear = session_unset();
+    $clear = $_SESSION['error']= null;
   }
 
   if(isset($_SESSION['error-login'])){
-    $_SESSION['error-login']= null;
-
-    $clear = session_unset();
+    $clear =  $_SESSION['error-login']= null;
   }
 
   if(isset($_SESSION['exito'])){
-    $_SESSION['exito']= null;
+   $clear=  $_SESSION['exito']= null;
 
-    session_unset();
   }
 
   return $clear;
 }
+
 
 
 ?>

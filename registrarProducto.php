@@ -41,7 +41,7 @@ if (isset($_POST)) {
     $save = mysqli_query($db, $sql);
 
         if ($save) {
-            $_SESSION['exito'] = "El registro se ha completado con éxito";
+            $_SESSION['exito'] = "El producto se ha añadido correctamente.";
         } else {
             
             $_SESSION['error']['general'] = "fallo al guardar el producto";

@@ -80,3 +80,12 @@ body{
     background: #ececec ;
 }
 
+.vendedor-logeado p{
+    font-size: 15px;
+    text-align: right;
+}
+.vendedor-logeado a{
+  float: right;
+  font-size: 12px;
+}
+
