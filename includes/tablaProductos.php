@@ -26,7 +26,7 @@
             <td><?=$producto['stock']?></td>
             <td>$<?=$producto['precio']?> pesos</td>
             <td>
-            <a href="#" class="btn btn-danger">Eliminar</a>
+            <a href="eliminarProducto.php?id=<?=$producto['id']?>" class="btn btn-danger" onclick="return confirm('¿Estas seguro de eliminar este producto?')">Eliminar</a>
             <a href="#" class="btn btn-primary">Editar</a>
             </td>
         </tr>
