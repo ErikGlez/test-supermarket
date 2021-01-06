@@ -40,6 +40,15 @@ function clearError(){
    $clear=  $_SESSION['exito']= null;
 
   }
+  
+  if(isset($_SESSION['agregadoCarrito'])){
+    $clear=  $_SESSION['agregadoCarrito']= null;
+ 
+   }
+  
+  if(isset($_SESSION['errorCarrito'])){
+    $clear = $_SESSION['errorCarrito']= null;
+  }
 
   return $clear;
 }

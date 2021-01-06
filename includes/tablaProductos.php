@@ -54,6 +54,7 @@
                 <th scope="col">Descripción</th>
                 <th scope="col">Stock</th>
                 <th scope="col">Precio</th>
+                <th scope="col"></th>
 
             </tr>
         </thead>
@@ -72,6 +73,33 @@
                         <td><?= $producto['descripcion'] ?></td>
                         <td><?= $producto['stock'] ?></td>
                         <td>$<?= $producto['precio'] ?> pesos</td>
+                        <td>
+                            <form action="agregarCarrito.php" method="POST">
+                            <div class="mb-3">
+                                <input type="hidden" class="form-control" name="id"  value="<?=$producto['id'] ?>" >
+                            </div>
+                            <div class="mb-3">
+                                <input type="hidden" class="form-control" name="nombre"  value="<?=$producto['nombre'] ?>">
+                            </div>
+                            <div class="mb-3">
+                                <input type="hidden" class="form-control" name="descripcion"  value="<?=$producto['descripcion'] ?>">
+                            </div>
+                            <div class="mb-3">
+                                <input type="hidden" class="form-control" name="stock"  value="<?=$producto['stock'] ?>">
+                            </div>
+                            <div class="mb-3">
+                                <input type="hidden" class="form-control" name="precio"  value="<?=$producto['precio'] ?>">
+                            </div>
+                            <div class="col-6 mb-1">
+                            <input type="text" class="form-control" name="cantidad" />
+                            </div>
+                            <div>
+                            <input type="submit" class="btn btn-success" value="Agregar" />
+                            </div>
+                          
+                           
+                            </form>
+                        </td>
                     </tr>
             <?php
                 endwhile;
@@ -83,3 +111,5 @@
     </table>
 
 <?php endif; ?>
+
+
