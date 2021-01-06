@@ -27,7 +27,7 @@
             <td>$<?=$producto['precio']?> pesos</td>
             <td>
             <a href="eliminarProducto.php?id=<?=$producto['id']?>" class="btn btn-danger" onclick="return confirm('¿Estas seguro de eliminar este producto?')">Eliminar</a>
-            <a href="#" class="btn btn-primary">Editar</a>
+            <a href="includes/formularioEditarProducto.php?id=<?=$producto['id']?>&nombre=<?=$producto['nombre']?>&descripcion=<?=$producto['descripcion']?>&stock=<?=$producto['stock']?>&precio=<?=$producto['precio']?>"class="btn btn-primary">Editar</a>
             </td>
         </tr>
         <?php
