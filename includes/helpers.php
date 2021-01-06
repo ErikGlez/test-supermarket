@@ -15,4 +15,32 @@ function obtenerProductos($conexion){
   }
 
 
+function mostrarError($error, $campo){
+  $alert = '';
+  if(isset($error[$campo]) && !empty($campo)){
+    $alert = '<div class="bg-danger">'.$error[$campo].'</div>';
+  }
+
+  return $alert;
+}
+
+function clearError(){
+  $clear = false;
+
+  if(isset($_SESSION['error'])){
+    $_SESSION['error']= null;
+
+    $clear = session_unset();
+  }
+
+  if(isset($_SESSION['exito'])){
+    $_SESSION['exito']= null;
+
+    session_unset();
+  }
+
+  return $clear;
+}
+
+
 ?>

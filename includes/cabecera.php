@@ -7,6 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
@@ -17,6 +18,19 @@
 </head>
 
 <body>
+      <header>
+        <div id="cabecera" >
+            <div class="row">
+            <div class="col-1 logo"> 
+            <img src="assets/img/logo.png" alt="logo SUPERMARKET">
+            </div>
+            <div class="col-11 titulo"><h1>SUPERMARKET</h1></></div>
+            </div>
+          
+           
+        </div>
+      </header>
+
 
     <div class="container overflow-hidden">
    
