@@ -3,6 +3,7 @@
 if(isset($_POST)){
     require_once "model/producto.php";
     require_once "includes/conexion.php";
+    require_once "includes/helpers.php";
     
     if(isset($_SESSION['CompraExitosa'])){
         unset($_SESSION['CompraExitosa']);
@@ -87,6 +88,7 @@ if(isset($_POST)){
             $query = "INSERT INTO detalles VALUES(null,$idUltimaVenta,$producto->id, $producto->cantidad, $producto->subTotal)";
 
             $saveDetalle = mysqli_query($db, $query);
+            actualizarStock($db,$producto->id,$producto->cantidad);
             
 
         }

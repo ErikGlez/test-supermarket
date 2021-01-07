@@ -28,6 +28,22 @@ function obtenerProductos($conexion){
   
   }
 
+  function actualizarStock($conexion,$id, $stockAdescontar){
+
+    $sql = "SELECT stock FROM productos WHERE id= $id";
+    $stockActual =0;
+    $res =mysqli_query($conexion, $sql);
+    if($reg = $res->fetch_array(MYSQLI_NUM)){
+      $stockActual = $reg[0];
+    }
+
+    $stockActual -= $stockAdescontar;
+
+    $query = "UPDATE productos SET stock = $stockActual WHERE id = $id";
+    $res =mysqli_query($conexion, $query);
+    
+  }
+
 function mostrarError($error, $campo){
   $alert = '';
   if(isset($error[$campo]) && !empty($campo)){

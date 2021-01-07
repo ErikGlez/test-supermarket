@@ -27,7 +27,6 @@
             <tr>
                 <th scope="col">Id</th>
                 <th scope="col">Nombre</th>
-                <th scope="col">Stock actual</th>
                 <th scope="col">Precio</th>
                 <th scope="col">Cantidad</th>
                 <th scope="col">SubTotal</th>
@@ -43,7 +42,6 @@
                     <tr>
                          <td><?= $p->id  ?></td>
                         <td><?= $p->nombre  ?></td>
-                        <td><?= $p->stock?></td>
                         <td>$<?= $p->precio ?> pesos</td>
                         <td><?= $p->cantidad ?></td>
                         <td>$<?= $p->subTotal ?> pesos</td>
