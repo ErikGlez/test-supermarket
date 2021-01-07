@@ -1,6 +1,9 @@
 <?php if (isset($_SESSION['carrito'])) : 
       $carrito  = $_SESSION['carrito'];
-   
+?>
+
+<?php if (count($carrito)>0) : 
+      
 ?>
 
     <!-- Mensajes de error / exito --->
@@ -28,12 +31,13 @@
                 <th scope="col">Precio</th>
                 <th scope="col">Cantidad</th>
                 <th scope="col">SubTotal</th>
-                <th scope="col">Opciones</th>
+                <th scope="col">Eliminar</th>
             </tr>
         </thead>
         <tbody>
             <?php
-                 $total=0;
+                 $total=0; // total acumulado del carrito.
+                 $i=0; //indice para poder eliminar productos agregados al carrito
                  foreach($carrito as $p):
             ?>
                     <tr>
@@ -42,9 +46,15 @@
                         <td>$<?= $p->precio ?> pesos</td>
                         <td><?= $p->cantidad ?></td>
                         <td>$<?= $p->subTotal ?> pesos</td>
-                        <td>Eliminar</td>
-                        <?=$total+=$p->subTotal?>
+                        <td>
+                            <a href="eliminarProductoCarrito.php?in=<?=$i?>" class="btn bg-warning">Eliminar</a>
+                        </td>
+                        <?php 
+                        $total+=$p->subTotal;
+                        $i++;
+                        ?>
                     </tr>
+                  
             <?php
                endforeach;
             ?>
@@ -60,7 +70,7 @@
 
     <hr class="mt-2" size="6" />
 
-
+    <?php endif; ?>
 
 <?php endif; ?>
 

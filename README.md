@@ -18,4 +18,10 @@ el archivo db.sql localizado en la carpeta db del proyecto.
 8. Una vez iniciada la sesión se mostrará el listado de productos, la opción de eliminar. y editar, también un formulario para agregar nuevos productos en la parte derecha.
 9. Dar clic en el botón de cerrar sesión para volver a la vista del cliente.
 
-## Acciones como cliente:
+#### Acciones como cliente:
+
+10. En la pagina principal se puede ver el listado de articulos (en el caso de que se tengan registrados) junto con un campo para indicar la cantidad y un boton de agregar (verde) al carrito.
+
+11. En la parte inferior de la pagina se podra ir apreciando los productos agregados al carrito con la respectiva información como también el total acumulado. 
+
+12. En la tabla del carrito se cuenta con la opción de eliminar el producto si así lo desea solo debe dar clic al botón eliminar (amarillo).
