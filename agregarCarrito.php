@@ -4,8 +4,10 @@
     if(isset($_POST)){
         require_once "model/producto.php";
         require_once "includes/conexion.php";
+        require_once "includes/helpers.php";
     
         $p = new Producto();
+        $pro = new Producto();
     
         $cantidad = $_POST['cantidad'];
 
@@ -18,17 +20,44 @@
             $p->cantidad = $_POST['cantidad'];
             $p->subTotal = $p->precio * $p->cantidad;
         
-            //verificar si ya existe una lista de compras
-            if(isset($_SESSION['carrito'])){
-                $carrito = $_SESSION['carrito']; //rescato el carrito
-            }else{
-                $carrito = array(); //creo el carrito
-            }
-        
-            array_push($carrito, $p);
-            $_SESSION['carrito'] = $carrito;  //subo de nuevo el carrito
 
-            $_SESSION['agregadoCarrito'] = "Se ha agregado correctamente.";
+            $tieneStock = tieneStock($db, $p->id, $p->stock, $p->cantidad);
+
+            if($tieneStock){
+                //verificar si ya existe una lista de compras
+                if(isset($_SESSION['carrito'])){
+                    $carrito = $_SESSION['carrito']; //rescato el carrito
+                }else{
+                    $carrito = array(); //creo el carrito
+                } 
+
+                $sumaStocks =0;
+                foreach($carrito as $pro){
+                    if($pro->id== $p->id){
+                        $sumaStocks += $p->cantidad;
+                    }
+                }
+
+                $sumaStocks +=$p->cantidad;
+
+                if($p->stock >= $sumaStocks){
+                    //tiene stock
+                    array_push($carrito, $p);
+                    $_SESSION['carrito'] = $carrito;  //subo de nuevo el carrito
+                    $_SESSION['agregadoCarrito'] = "Se ha agregado correctamente.";
+                }else{
+                    $_SESSION['noStock'] = "No hay stock suficiente.";
+                }
+    
+               
+            }else{
+                //no tiene stock
+                $_SESSION['noStock'] = "No hay stock suficiente.";
+            }
+
+
+            
+           
         }else{
             $_SESSION['errorCantidad'] = "La cantidad no es valida.";
         }

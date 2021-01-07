@@ -14,6 +14,20 @@ function obtenerProductos($conexion){
   
   }
 
+  function tieneStock($conexion, $id, $stock, $cantidad){
+    $sql = "SELECT stock FROM productos WHERE id= $id";
+
+    $res =mysqli_query($conexion, $sql);
+  
+    $stockActual =0;
+    if($reg = $res->fetch_array(MYSQLI_NUM)){
+      $stockActual = $reg[0];
+    }
+
+    return $stockActual >= $cantidad;
+  
+  }
+
 function mostrarError($error, $campo){
   $alert = '';
   if(isset($error[$campo]) && !empty($campo)){

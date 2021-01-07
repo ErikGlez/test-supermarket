@@ -109,6 +109,12 @@
 
         </tbody>
     </table>
+    <?php if(isset($_SESSION['noStock'])) : ?>
+                   <div class="bg-danger mb-1 p-1">
+                   <?=$_SESSION['noStock']?>
+                   </div> 
+     <?php endif;?>
+   
 
 <?php endif; ?>
 

@@ -25,3 +25,7 @@ el archivo db.sql localizado en la carpeta db del proyecto.
 11. En la parte inferior de la pagina se podra ir apreciando los productos agregados al carrito con la respectiva información como también el total acumulado. 
 
 12. En la tabla del carrito se cuenta con la opción de eliminar el producto si así lo desea solo debe dar clic al botón eliminar (amarillo).
+
+13. En la tabla del carrito se cuenta con la opción de eliminar el producto si así lo desea solo debe dar clic al botón eliminar (amarillo).
+
+14.  Para realizar la venta se debe contar con al menos 1 producto en el carrito para que se muestre el formulario que solicitara los datos del cliente y una vez rellenado el formulario se debe dar clic en el botón comprar (azul) para realizar la compra.
