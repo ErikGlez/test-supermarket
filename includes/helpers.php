@@ -14,7 +14,6 @@ function obtenerProductos($conexion){
   
   }
 
-
 function mostrarError($error, $campo){
   $alert = '';
   if(isset($error[$campo]) && !empty($campo)){

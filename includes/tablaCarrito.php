@@ -1,4 +1,6 @@
-<?php if (isset($_SESSION['carrito'])) : 
+
+
+<?php if (isset($_SESSION['carrito']) && !isset($_SESSION['vendedor'])) : 
       $carrito  = $_SESSION['carrito'];
 ?>
 
@@ -25,7 +27,7 @@
     <table class="table">
         <thead>
             <tr>
-                
+                <th scope="col">Id</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Stock actual</th>
                 <th scope="col">Precio</th>
@@ -41,6 +43,7 @@
                  foreach($carrito as $p):
             ?>
                     <tr>
+                         <td><?= $p->id  ?></td>
                         <td><?= $p->nombre  ?></td>
                         <td><?= $p->stock?></td>
                         <td>$<?= $p->precio ?> pesos</td>
@@ -69,6 +72,38 @@
     </table>
 
     <hr class="mt-2" size="6" />
+    
+    <h4 class="bg bg-primary p-1">Realizar compra</h4>
+    <hr class="mt-2" size="6" />
+    <form action="realizarVenta.php" method="POST">
+        <div class="mb-3">
+            <input type="hidden" class="form-control" name="total" value="<?=$total?>">
+        </div>
+        <div class="mb-3">
+             <label for="nombre" class="form-label">Nombre</label>
+             <input type="text" class="form-control" name="nombre">
+         </div>
+         <div class="mb-3">
+             <label for="apellidos" class="form-label">Apellidos</label>
+             <input type="text" class="form-control" name="apellidos">
+         </div>
+         <div class="mb-3">
+             <label for="domicilio" class="form-label">Domicilio</label>
+             <input type="text" class="form-control" name="domicilio">
+         </div>
+         <div class="mb-3">
+             <label for="correo" class="form-label">Correo</label>
+             <input type="email" class="form-control" name="correo">
+         </div>
+         <div class="mb-3">
+             <label for="telefono" class="form-label">Teléfono</label>
+             <input type="text" class="form-control" name="telefono">
+         </div>
+       
+        <input type="submit" class="btn btn-primary" value="Comprar"/>
+    </form>
+
+
 
     <?php endif; ?>
 

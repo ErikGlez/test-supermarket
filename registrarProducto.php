@@ -25,11 +25,11 @@ if (isset($_POST)) {
         $error['descripcion'] ="La descripción no es valida";
     }
 
-    if(empty($stock) && !is_numeric($stock)){
+    if(empty($stock) || !is_numeric($stock)){
         $error['stock'] ="El stock no es valido. Introduzca un valor numerico (por ejemplo: 6, 6.0 )";
     }
 
-    if(empty($precio) && !is_numeric($stock)){
+    if(empty($precio) || !is_numeric($stock)){
         $error['precio'] ="El precio no es valido.Introduzca un valor numerico (por ejemplo: 6, 6.0 )";
     }
 
