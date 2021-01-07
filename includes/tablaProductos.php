@@ -1,6 +1,6 @@
 <?php if (isset($_SESSION['vendedor'])) : ?>
     <!-- si existe un vendedor logeado-->
-
+     
     <table class="table">
         <thead>
             <tr>
@@ -91,10 +91,10 @@
                                 <input type="hidden" class="form-control" name="precio"  value="<?=$producto['precio'] ?>">
                             </div>
                             <div class="col-6 mb-1">
-                            <input type="text" class="form-control" name="cantidad" />
+                            <input type="text" class="form-control" style="height: 25px; font-size:15px" name="cantidad" />
                             </div>
                             <div>
-                            <input type="submit" class="btn btn-success" value="Agregar" />
+                            <input type="submit" class="btn btn-success" style="font-size:12px;" value="Agregar" />
                             </div>
                           
                            

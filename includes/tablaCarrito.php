@@ -5,18 +5,18 @@
 
     <!-- Mensajes de error / exito --->
      <?php if(isset($_SESSION['agregadoCarrito'])) : ?>
-                   <div class="bg-success">
+                   <div class="bg-success mb-1 p-1">
                    <?=$_SESSION['agregadoCarrito']?>
 
                    </div> 
                 
             <?php elseif(isset($_SESSION['errorCantidad'])): ?>
-                <div class="bg-danger">
+                <div class="bg-danger  mb-1 p-1">
                    <?=$_SESSION['errorCantidad']?>
 
                    </div> 
      <?php endif;?>
-    <h4 class="bg-warning">Listado de compras:</h4>
+    <h4 class="bg-warning p-1">Listado de compras:</h4>
    
     <!--cariito-->
     <table class="table">
@@ -33,6 +33,7 @@
         </thead>
         <tbody>
             <?php
+                 $total=0;
                  foreach($carrito as $p):
             ?>
                     <tr>
@@ -42,10 +43,15 @@
                         <td><?= $p->cantidad ?></td>
                         <td>$<?= $p->subTotal ?> pesos</td>
                         <td>Eliminar</td>
+                        <?=$total+=$p->subTotal?>
                     </tr>
             <?php
                endforeach;
             ?>
+            <tr>
+              <td colspan="4">Total:</td>
+              <th colspan="5">$ <?=$total?> pesos.</th>
+            </tr>
             
 
 

@@ -8,7 +8,7 @@
     
         $cantidad = $_POST['cantidad'];
 
-        if(is_numeric($cantidad) && $cantidad > 0.4){
+        if(is_numeric($cantidad) && $cantidad > 0.4 && $cantidad<= $_POST['stock']){
             $p->id =$_POST['id'];
             $p->nombre =$_POST['nombre'];
             $p->descripcion =$_POST['descripcion'];
@@ -29,7 +29,7 @@
 
             $_SESSION['agregadoCarrito'] = "Se ha agregado correctamente.";
         }else{
-            $_SESSION['errorCantidad'] = "la cantidad no es valida.";
+            $_SESSION['errorCantidad'] = "La cantidad no es valida.";
         }
        
     
