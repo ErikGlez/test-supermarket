@@ -1,7 +1,7 @@
 # TEST SUPERMARKET
 
 Aplicación para la visualizacion del inventario, login para vendedores, y funcionalidades para la modificación 
-de los productos (agregar, eliminar, editar).
+de los productos (agregar, eliminar, editar), asi como tambien punto de venta en la vista para el cliente, con carrito de compras.
 
 
 ### Pasos para la ejecución del proyecto:
