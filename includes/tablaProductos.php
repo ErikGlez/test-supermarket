@@ -5,7 +5,7 @@
         <thead>
             <tr>
                 <th scope="col">id</th>
-                <th scope="col">Nombre(s)</th>
+                <th scope="col">Nombre</th>
                 <th scope="col">Descripción</th>
                 <th scope="col">Stock</th>
                 <th scope="col">Precio</th>

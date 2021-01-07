@@ -26,12 +26,14 @@
             <div class="col-12">
                 <?php require_once 'includes/tablaProductos.php'; ?>
             </div>
-
-        </div>
-        <div class="col-3">
             <div class="col-12">
                 <?php require_once 'includes/tablaCarrito.php'; ?>
             </div>
+
+        </div>
+        <div class="col-3">
+           
+           
             <div class="col-12 p-2" style="border-left: 2px solid #ccc;">
 
                 <?php require_once 'includes/lateral.php'; ?>

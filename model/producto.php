@@ -6,6 +6,8 @@ class Producto{
     public $descripcion;
     public $stock;
     public $precio;
+    public $cantidad;
+    public $subTotal; // precio x cantidad
 }
 
 

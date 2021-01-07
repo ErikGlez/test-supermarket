@@ -1,5 +1,6 @@
 <?php if (isset($_SESSION['carrito'])) : 
-      $carrito  = $_SESSION['carrito'];  
+      $carrito  = $_SESSION['carrito'];
+   
 ?>
 
     <!-- Mensajes de error / exito --->
@@ -15,11 +16,43 @@
 
                    </div> 
      <?php endif;?>
-
-    <h1><?=count($carrito)?></h1>
+    <h4 class="bg-warning">Listado de compras:</h4>
+   
     <!--cariito-->
+    <table class="table">
+        <thead>
+            <tr>
+                
+                <th scope="col">Nombre</th>
+                <th scope="col">Stock actual</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">SubTotal</th>
+                <th scope="col">Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+                 foreach($carrito as $p):
+            ?>
+                    <tr>
+                        <td><?= $p->nombre  ?></td>
+                        <td><?= $p->stock?></td>
+                        <td>$<?= $p->precio ?> pesos</td>
+                        <td><?= $p->cantidad ?></td>
+                        <td>$<?= $p->subTotal ?> pesos</td>
+                        <td>Eliminar</td>
+                    </tr>
+            <?php
+               endforeach;
+            ?>
+            
 
 
+        </tbody>
+    </table>
+
+    <hr class="mt-2" size="6" />
 
 
 

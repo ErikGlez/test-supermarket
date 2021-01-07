@@ -14,6 +14,8 @@
             $p->descripcion =$_POST['descripcion'];
             $p->stock =$_POST['stock'];
             $p->precio =$_POST['precio'];
+            $p->cantidad = $_POST['cantidad'];
+            $p->subTotal = $p->precio * $p->cantidad;
         
             //verificar si ya existe una lista de compras
             if(isset($_SESSION['carrito'])){

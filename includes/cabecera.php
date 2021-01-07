@@ -1,3 +1,4 @@
+<?php require_once "./model/producto.php";?>
 <?php require_once 'conexion.php'; ?>
 <?php require_once 'helpers.php'; ?>
 
