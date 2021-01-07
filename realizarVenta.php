@@ -3,6 +3,16 @@
 if(isset($_POST)){
     require_once "model/producto.php";
     require_once "includes/conexion.php";
+    
+    if(isset($_SESSION['CompraExitosa'])){
+        unset($_SESSION['CompraExitosa']);
+    }
+
+    if(isset($_SESSION['errorCompraCliente'])){
+        unset($_SESSION['errorCompraCliente']);
+    }
+
+
    
     $producto = new Producto();
    
@@ -80,17 +90,26 @@ if(isset($_POST)){
             
 
         }
+        $_SESSION['CompraExitosa'] = "Compra exitosa";
 
-        $carrito = $_SESSION['carrito'];
-        session_unset($carrito);
+        unset($_SESSION['carrito']);
+       
 
 
      }else{
-         $_SESSION['errorCompraCliente'] = $error;
+         $_SESSION['errorCompraCliente'] = "No ha sido posible realizar la compra.";
+         $_SESSION['errores'] = $error;
+         
+         unset($_SESSION['carrito']);
         
      }
 
 }
+
+
+unset($_SESSION['carrito']);
+
+
 
 header('location: index.php');
 

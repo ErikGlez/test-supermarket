@@ -1,4 +1,8 @@
 <?php require_once 'includes/cabecera.php'; ?>
+
+?>
+
+
 <div class="container overflow-hidden">
     <div class="row mt-3">
         <div class="col-9">
@@ -27,6 +31,7 @@
                 <?php require_once 'includes/tablaProductos.php'; ?>
             </div>
             <div class="col-12">
+                
                 <?php require_once 'includes/tablaCarrito.php'; ?>
             </div>
 

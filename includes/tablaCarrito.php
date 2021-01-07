@@ -1,5 +1,3 @@
-
-
 <?php if (isset($_SESSION['carrito']) && !isset($_SESSION['vendedor'])) : 
       $carrito  = $_SESSION['carrito'];
 ?>

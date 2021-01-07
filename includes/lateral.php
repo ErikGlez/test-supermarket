@@ -52,7 +52,27 @@
  <?php endif; ?>  <!-- si existe vendedor logeado-->
 
  <?php if(!isset($_SESSION['vendedor'])): ?>  <!-- si no existe un vendedor logeado-->
-       
+    <?php if(isset($_SESSION['CompraExitosa'])) : ?>
+                   <div class="bg-primary">
+                   <?=$_SESSION['CompraExitosa']?>
+                   </div> 
+                   <hr class="mt-2" size="6" /> 
+      <?php elseif(isset($_SESSION['errorCompraCliente'])): ?>
+                <div class="bg-danger">
+                   <strong> <?=$_SESSION['errorCompraCliente']?></strong>
+                   <?php
+                    echo isset($_SESSION['errores']) ? mostrarError($_SESSION['errores'],'nombreCliente') : ''; 
+                    echo isset($_SESSION['errores']) ? mostrarError($_SESSION['errores'],'apellidoCliente') : '';
+                    echo isset($_SESSION['errores']) ? mostrarError($_SESSION['errores'],'domicilioCliente') : ''; 
+                    echo isset($_SESSION['errores']) ? mostrarError($_SESSION['errores'],'correoCliente') : '';
+                    echo isset($_SESSION['errores']) ? mostrarError($_SESSION['errores'],'telefonoCliente') : '';
+                    echo isset($_SESSION['errores']) ? mostrarError($_SESSION['errores'],'totalCliente') : '';
+                    ?> 
+
+                   </div> 
+     <?php endif;?>
+
+   
 <div id="login" class="mt-3">
             <h5>Identificate</h5>
             <p style="font-size: 12px;">¿Eres vendedor?, inicia sesión para acceder al panel de vendedor</p>
